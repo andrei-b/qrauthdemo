@@ -50,13 +50,6 @@
     <Compile Include="Base64QRCode.cs" />
     <Compile Include="BitmapByteQRCode.cs" />
     <Compile Include="PayloadGenerator.cs" />
-    <Compile Include="Properties\auth.aspx.cs">
-      <DependentUpon>auth.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Properties\auth.aspx.designer.cs">
-      <DependentUpon>auth.aspx</DependentUpon>
-    </Compile>
     <Compile Include="QRCodeData.cs" />
     <Compile Include="QRCode.cs" />
     <Compile Include="QRCodeGenerator.cs" />
@@ -64,9 +57,6 @@
     <Compile Include="Framework4.0Methods\String4Methods.cs" />
     <Compile Include="SvgQRCode.cs" />
     <Compile Include="UnityQRCode.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Properties\auth.aspx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
