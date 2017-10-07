@@ -10,10 +10,21 @@
     <form id="form1" runat="server">
     <div>
     
+        <asp:LoginView ID="LoginView1" runat="server">
+            <AnonymousTemplate>
+                You are not logged in!<br /> Please select the log in method:<br />
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Password Login</asp:HyperLink>
+            </AnonymousTemplate>
+            <LoggedInTemplate>
+                You are logged in,
+                <asp:LoginName ID="LoginName1" runat="server" />
+                !
+            </LoggedInTemplate>
+        </asp:LoginView>
+    
     </div>
         <p>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Login.aspx">Password Login</asp:HyperLink>
-        </p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
