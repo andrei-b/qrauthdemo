@@ -4,3 +4,12 @@ C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\qrauth\bin\qrauth.pdb
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\qrauth\obj\Debug\qrauth.csprojResolveAssemblyReference.cache
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\qrauth\obj\Debug\qrauth.dll
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\qrauth\obj\Debug\qrauth.pdb
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\qrauth.dll.config
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\qrauth.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\qrauth.pdb
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\obj\Debug\qrauth.csprojResolveAssemblyReference.cache
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\obj\Debug\qrauth.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\obj\Debug\qrauth.pdb
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\QRCoder.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\UnityEngine.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\qrauth\bin\QRCoder.pdb

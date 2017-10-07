@@ -13,7 +13,7 @@
         <h1>Login with QR Code</h1>
     
     </div>
-        <asp:Image ID="Image1" runat="server" />
+        <asp:Image ID="Image1" runat="server" OnPreRender="Image1_PreRender" />
     </form>
 </body>
 </html>

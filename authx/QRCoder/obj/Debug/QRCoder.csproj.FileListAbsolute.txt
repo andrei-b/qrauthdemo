@@ -4,3 +4,9 @@ C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\QRCoder\bin\Debug\QRC
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\QRCoder\bin\Debug\UnityEngine.dll
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\QRCoder\obj\Debug\QRCoder.dll
 C:\Users\andre\Documents\Visual Studio 2015\Projects\authx\QRCoder\obj\Debug\QRCoder.pdb
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\bin\Debug\QRCoder.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\bin\Debug\QRCoder.pdb
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\bin\Debug\UnityEngine.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\obj\Debug\QRCoder.csprojResolveAssemblyReference.cache
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\obj\Debug\QRCoder.dll
+C:\Users\andre\Documents\Visual Studio 2015\Projects\qrauthdemo\authx\QRCoder\obj\Debug\QRCoder.pdb
