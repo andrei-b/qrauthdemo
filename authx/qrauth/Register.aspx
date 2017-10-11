@@ -11,12 +11,13 @@
     <div>
     
     </div>
-        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnCreatedUser="CreateUserWizard1_CreatedUser">
+        <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" ContinueDestinationPageUrl="~/Default.aspx" OnCreatedUser="CreateUserWizard1_CreatedUser" OnCreatingUser="CreateUserWizard1_CreatingUser">
             <WizardSteps>
                 <asp:CreateUserWizardStep runat="server" />
                 <asp:CompleteWizardStep runat="server" />
             </WizardSteps>
         </asp:CreateUserWizard>
+        <asp:Label ID="Label1" runat="server" ForeColor="#CC0000" Text="Label"></asp:Label>
     </form>
 </body>
 </html>

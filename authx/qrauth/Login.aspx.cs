@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using LiteDB;
 
 namespace qrauth
 {
@@ -22,7 +23,21 @@ namespace qrauth
             }
             else
             {
-                e.Authenticated = false;
+                using (var db = new LiteDatabase(@"C:\db\qrauth.db"))
+                {
+                    var users = db.GetCollection<User>("users");
+                    var results = users.Find(x => x.userName.Equals(Login1.UserName));
+                    if (results.Count() > 0)
+                    {
+                        if (results.First().password.Equals(Login1.Password))
+                            e.Authenticated = true;
+                        else
+                            e.Authenticated = false;
+                    }
+                    else
+                        e.Authenticated = false;
+                    db.Dispose(); 
+                }
             }
         }
     }

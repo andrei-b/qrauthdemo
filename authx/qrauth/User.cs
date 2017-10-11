@@ -7,9 +7,9 @@ namespace qrauth
 {
     public class User
     {
-        public String userName;
-        public String password;
-        public bool isLoggedIn;
-        public string sessid;
+        public String userName { get; set; }
+        public String password { get; set; }
+        public bool isLoggedIn { get; set; }
+        public string sessid { get; set; }
     }
 }
