@@ -12,11 +12,12 @@ namespace qrauth
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
 
         private Boolean addUser()
         {
-            using (LiteDatabase db = new LiteDatabase(@"C:\db\qrauth.db"))
+            using (LiteDatabase db = new LiteDatabase(@"C:\db\qrauth2.db"))
             {
                 var users = db.GetCollection<User>("users");
                 
@@ -27,17 +28,22 @@ namespace qrauth
                 }
                 else
                 {
-                    User user = new User
+                    User user = new User(CreateUserWizard1.UserName, CreateUserWizard1.Password);
+                    bool r = true;
+                    try
                     {
-                        userName = CreateUserWizard1.UserName,
-                        password = CreateUserWizard1.Password,
-                        isLoggedIn = false,
-                        sessid = ""
-                    };
-                    if (users.Insert(user))
-                        return true;
-                    else
-                        return false;
+                        // The following line rises an exception but does what it should. Buggy DBLite probably
+                        r = users.Insert(user);
+                    }                    
+                    catch (InvalidCastException e)
+                    {
+                    }
+                    finally
+                    {
+                        db.Dispose();
+                    }
+                    return r;
+                   
                 }
             }
         }
@@ -49,9 +55,11 @@ namespace qrauth
         protected void CreateUserWizard1_CreatingUser(object sender, LoginCancelEventArgs e)
         {
             if (!addUser())
-                Label1.Text = "The user is not registered!";
+                Response.Redirect("Register.aspx");
             else
                 Response.Redirect("Login.aspx");
         }
+
+       
     }
 }

@@ -23,7 +23,7 @@ namespace qrauth
             }
             else
             {
-                using (var db = new LiteDatabase(@"C:\db\qrauth.db"))
+                using (var db = new LiteDatabase(@"C:\db\qrauth2.db"))
                 {
                     var users = db.GetCollection<User>("users");
                     var results = users.Find(x => x.userName.Equals(Login1.UserName));
