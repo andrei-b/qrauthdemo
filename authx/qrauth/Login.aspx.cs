@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LiteDB;
+using System.Configuration;
 
 namespace qrauth
 {
@@ -23,7 +24,10 @@ namespace qrauth
             }
             else
             {
-                using (var db = new LiteDatabase(@"C:\db\qrauth2.db"))
+                String dbPath = ConfigurationManager.AppSettings.Get("DBFilePath");
+                if (dbPath.Equals(""))
+                    throw new Exception("Please set DBFilePath in the Web.config file");
+                using (var db = new LiteDatabase(dbPath))
                 {
                     var users = db.GetCollection<User>("users");
                     var results = users.Find(x => x.userName.Equals(Login1.UserName));

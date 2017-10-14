@@ -16,9 +16,7 @@ namespace qrauth
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Context.Session.Abandon();
-            FormsAuthentication.SignOut();
-            Response.Redirect("Default.aspx");
+            LoginUtil.logOut(Response);
         }
     }
 }

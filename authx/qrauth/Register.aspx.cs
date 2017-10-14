@@ -5,6 +5,7 @@ using LiteDB;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace qrauth
 {
@@ -17,10 +18,13 @@ namespace qrauth
 
         private Boolean addUser()
         {
-            using (LiteDatabase db = new LiteDatabase(@"C:\db\qrauth2.db"))
+            String dbPath = ConfigurationManager.AppSettings.Get("DBFilePath");
+            if (dbPath.Equals(""))
+                throw new Exception("Please set DBFilePath in the Web.config file");
+            using (LiteDatabase db = new LiteDatabase(dbPath))
             {
                 var users = db.GetCollection<User>("users");
-                
+
                 var results = users.Find(x => x.userName.Equals(CreateUserWizard1.UserName));
                 if (results.Count() > 0)
                 {
@@ -32,9 +36,9 @@ namespace qrauth
                     bool r = true;
                     try
                     {
-                        // The following line rises an exception but does what it should. Buggy DBLite probably
+                        // The following line raises an exception but still does what it should do. Buggy DBLite probably
                         r = users.Insert(user);
-                    }                    
+                    }
                     catch (InvalidCastException e)
                     {
                     }
@@ -43,7 +47,7 @@ namespace qrauth
                         db.Dispose();
                     }
                     return r;
-                   
+
                 }
             }
         }
