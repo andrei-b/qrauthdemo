@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 namespace qrauth
 {
@@ -13,7 +11,7 @@ namespace qrauth
         {
 
         }
-
+                
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
             if ((Login1.UserName.Equals("andrei")&&(Login1.Password.Equals("letmein"))))
@@ -22,7 +20,8 @@ namespace qrauth
             }
             else
             {
-                e.Authenticated = false;
+                e.Authenticated = LoginUtil.checkUser(Login1.UserName, Login1.Password);
+
             }
         }
     }

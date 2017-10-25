@@ -22,7 +22,7 @@
             <LoggedInTemplate>
                 You are logged in,
                 <asp:LoginName ID="LoginName1" runat="server" />
-                !
+                !<br /> &nbsp;<asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Log out</asp:LinkButton>
             </LoggedInTemplate>
         </asp:LoginView>
     
