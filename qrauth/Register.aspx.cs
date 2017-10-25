@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI.WebControls;
+using System.Web.SessionState;
 
 namespace qrauth
 {
-    public partial class Register : System.Web.UI.Page
+    public partial class Register : System.Web.UI.Page, IRequiresSessionState
     {
         protected void Page_Load(object sender, EventArgs e)
         {

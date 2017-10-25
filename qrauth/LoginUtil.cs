@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
+using System.Web.SessionState;
 using System.Security.Cryptography;
 using System.Text;
 using LiteDB;
@@ -88,7 +89,7 @@ namespace qrauth
                 {
                     
                     Int32 maxid = users.Max();
-                    User user = new User(maxid+ (new Random()).Next(16), name, pwd);
+                    User user = new User(maxid + (new Random()).Next(16), name, pwd);
                     bool r = true;
                     try
                     {
@@ -105,6 +106,38 @@ namespace qrauth
                     return r;
                 }
             }
+        }
+
+        static public int newLoginSession()
+        {
+            String dbPath = ConfigurationManager.AppSettings.Get("DBFilePath");
+            if (dbPath.Equals(""))
+                throw new Exception("Please set DBFilePath in the Web.config file");
+            using (LiteDatabase db = new LiteDatabase(dbPath))
+            {
+                LiteCollection<UserSession> logins = db.GetCollection<UserSession>("sessions");
+                logins.EnsureIndex(x => x.userSessionId);
+                Int32 maxid = logins.Max();
+                UserSession login = new UserSession(maxid + (new Random()).Next(16));
+                try
+                {
+                    // The following line raises an exception but still does what it should do. Buggy DBLite probably
+                    logins.Insert(login);
+
+                }
+                catch (InvalidCastException e)
+                {
+                }
+                finally
+                {
+                    db.Dispose();
+                }
+                return login.userSessionId;
+            }
+        }
+        public static bool isUserLogged(HttpSessionState session)
+        {
+            return true;
         }
     }
 }

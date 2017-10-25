@@ -2,10 +2,11 @@
 using System.Linq;
 using QRCoder;
 using System.IO;
+using System.Web.SessionState;
 
 namespace qrauth
 {
-    public partial class QRCLogin : System.Web.UI.Page
+    public partial class QRCLogin : System.Web.UI.Page, IRequiresSessionState 
     {
         protected void Page_Load(object sender, EventArgs e)
         {
