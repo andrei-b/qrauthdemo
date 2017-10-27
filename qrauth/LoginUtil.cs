@@ -31,7 +31,7 @@ namespace qrauth
             return h;
         }
 
-        static public bool checkUser(String name, String pwd)
+        static public int checkUser(String name, String pwd)
         {
             String dbPath = ConfigurationManager.AppSettings.Get("DBFilePath");
             if (dbPath.Equals(""))
@@ -54,13 +54,14 @@ namespace qrauth
                 {
                     if (en.Current.password.Equals(pwd))
                     {
+                        int uid = en.Current.userId;  
                         db.Dispose();
-                        return true;
+                        return uid;
                     }
                     else
                     {
                         db.Dispose();
-                        return false;
+                        return 0;
                     }
                 }
                 else
