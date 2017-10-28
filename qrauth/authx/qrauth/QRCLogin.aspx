@@ -15,5 +15,18 @@
     </div>
         <asp:Image ID="Image1" runat="server" OnPreRender="Image1_PreRender" />
     </form>
+    <asp:ScriptManager runat="server" id="ScriptManager1" />
+<asp:Timer ID="Timer1" runat="server" Interval="120000" 
+  OnTick="Timer1_Tick">
+</asp:Timer>
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+  <Triggers>
+    <asp:AsyncPostBackTrigger ControlID="Timer1" 
+        EventName="Tick" />
+    </Triggers>
+    <ContentTemplate>
+      <asp:Label ID="Label1" runat="server" ></asp:Label>
+  </ContentTemplate>
+</asp:UpdatePanel>
 </body>
 </html>

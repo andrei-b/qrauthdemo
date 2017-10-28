@@ -21,7 +21,7 @@
         <p>
 &nbsp;&nbsp;&nbsp;
         </p>
-        <asp:Login ID="Login1" runat="server">
+        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate">
             <LayoutTemplate>
                 <table cellpadding="1" cellspacing="0" style="border-collapse:collapse;">
                     <tr>
